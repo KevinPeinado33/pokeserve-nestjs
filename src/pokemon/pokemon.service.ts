@@ -15,7 +15,7 @@ import { Pokemon } from './entities/pokemon.entity'
 export class PokemonService {
 
   constructor(
-    @InjectModel(Pokemon.name)
+    @InjectModel( Pokemon.name )
     private readonly pokemonModel: Model< Pokemon >
   ) { }
 
