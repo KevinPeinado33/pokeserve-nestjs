@@ -11,7 +11,18 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      forbidNonWhitelisted: true
+      forbidNonWhitelisted: true,
+      /**
+       * [ INI ]
+       * las sgtes opciones ayudan a la tranformación pero
+       * consumen un poco mas la memoria ya que haran la transformación
+       * por debajo.
+       */
+      transform: true,
+      transformOptions: {
+        enableCircularCheck: true
+      }
+      // [ FIN ]
     })
   )
 
